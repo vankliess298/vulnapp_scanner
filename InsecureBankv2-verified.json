@@ -1,0 +1,208 @@
+{
+  "findings": [
+    {
+      "rule_id": "dangerous-permission",
+      "title": "Dangerous permission",
+      "severity": "medium",
+      "description": "The application requests a sensitive permission; a declaration does not prove it is granted or abused.",
+      "evidence": "android.permission.READ_CONTACTS",
+      "source": "androguard:AndroidManifest.xml"
+    },
+    {
+      "rule_id": "dangerous-permission",
+      "title": "Dangerous permission",
+      "severity": "medium",
+      "description": "The application requests a sensitive permission; a declaration does not prove it is granted or abused.",
+      "evidence": "android.permission.SEND_SMS",
+      "source": "androguard:AndroidManifest.xml"
+    },
+    {
+      "rule_id": "dangerous-permission",
+      "title": "Dangerous permission",
+      "severity": "medium",
+      "description": "The application requests a sensitive permission; a declaration does not prove it is granted or abused.",
+      "evidence": "android.permission.WRITE_EXTERNAL_STORAGE",
+      "source": "androguard:AndroidManifest.xml"
+    },
+    {
+      "rule_id": "debuggable",
+      "title": "Debuggable application",
+      "severity": "high",
+      "description": "Debuggable builds can expose runtime inspection and debugging capabilities.",
+      "evidence": "android:debuggable=\"true\"",
+      "source": "androguard:AndroidManifest.xml"
+    },
+    {
+      "rule_id": "backup-enabled",
+      "title": "Application backup enabled",
+      "severity": "medium",
+      "description": "Application backup is enabled; actual data exposure depends on backup rules, Android version and device policy.",
+      "evidence": "android:allowBackup=\"true\"",
+      "source": "androguard:AndroidManifest.xml"
+    },
+    {
+      "rule_id": "exported-component",
+      "title": "Exported component",
+      "severity": "medium",
+      "description": "This component is declared exported or uses an exported platform default. Review permissions and input validation; export alone is not proof of exploitation.",
+      "evidence": "activity com.android.insecurebankv2.LoginActivity: implicit exported default from intent-filter (target SDK 22)",
+      "source": "androguard:AndroidManifest.xml"
+    },
+    {
+      "rule_id": "exported-component",
+      "title": "Exported component",
+      "severity": "medium",
+      "description": "This component is declared exported or uses an exported platform default. Review permissions and input validation; export alone is not proof of exploitation.",
+      "evidence": "activity com.android.insecurebankv2.PostLogin: android:exported=\"true\"",
+      "source": "androguard:AndroidManifest.xml"
+    },
+    {
+      "rule_id": "exported-component",
+      "title": "Exported component",
+      "severity": "medium",
+      "description": "This component is declared exported or uses an exported platform default. Review permissions and input validation; export alone is not proof of exploitation.",
+      "evidence": "activity com.android.insecurebankv2.DoTransfer: android:exported=\"true\"",
+      "source": "androguard:AndroidManifest.xml"
+    },
+    {
+      "rule_id": "exported-component",
+      "title": "Exported component",
+      "severity": "medium",
+      "description": "This component is declared exported or uses an exported platform default. Review permissions and input validation; export alone is not proof of exploitation.",
+      "evidence": "activity com.android.insecurebankv2.ViewStatement: android:exported=\"true\"",
+      "source": "androguard:AndroidManifest.xml"
+    },
+    {
+      "rule_id": "exported-component",
+      "title": "Exported component",
+      "severity": "medium",
+      "description": "This component is declared exported or uses an exported platform default. Review permissions and input validation; export alone is not proof of exploitation.",
+      "evidence": "provider com.android.insecurebankv2.TrackUserContentProvider: android:exported=\"true\"",
+      "source": "androguard:AndroidManifest.xml"
+    },
+    {
+      "rule_id": "exported-component",
+      "title": "Exported component",
+      "severity": "medium",
+      "description": "This component is declared exported or uses an exported platform default. Review permissions and input validation; export alone is not proof of exploitation.",
+      "evidence": "receiver com.android.insecurebankv2.MyBroadCastReceiver: android:exported=\"true\"",
+      "source": "androguard:AndroidManifest.xml"
+    },
+    {
+      "rule_id": "exported-component",
+      "title": "Exported component",
+      "severity": "medium",
+      "description": "This component is declared exported or uses an exported platform default. Review permissions and input validation; export alone is not proof of exploitation.",
+      "evidence": "activity com.android.insecurebankv2.ChangePassword: android:exported=\"true\"",
+      "source": "androguard:AndroidManifest.xml"
+    },
+    {
+      "rule_id": "weak-crypto",
+      "title": "Weak hash algorithm reference",
+      "severity": "medium",
+      "description": "A collision-weakened hash is passed to MessageDigest.getInstance. Review whether it protects security-sensitive data; non-security checksums may be intentional.",
+      "evidence": "MessageDigest.getInstance('MD5'); const-string @0x8",
+      "source": "androguard:classes.dex:Lcom/google/android/gms/ads/internal/util/client/zza;->zzax(Ljava/lang/String;)Ljava/lang/String;@0xc"
+    },
+    {
+      "rule_id": "weak-crypto",
+      "title": "Weak hash algorithm reference",
+      "severity": "medium",
+      "description": "A collision-weakened hash is passed to MessageDigest.getInstance. Review whether it protects security-sensitive data; non-security checksums may be intentional.",
+      "evidence": "MessageDigest.getInstance('SHA1'); const-string @0x10",
+      "source": "androguard:classes.dex:Lcom/google/android/gms/iid/InstanceID;->zza(Ljava/security/KeyPair;)Ljava/lang/String;@0x14"
+    },
+    {
+      "rule_id": "weak-crypto",
+      "title": "Weak hash algorithm reference",
+      "severity": "medium",
+      "description": "A collision-weakened hash is passed to MessageDigest.getInstance. Review whether it protects security-sensitive data; non-security checksums may be intentional.",
+      "evidence": "MessageDigest.getInstance('MD5'); const-string @0x1e",
+      "source": "androguard:classes.dex:Lcom/google/android/gms/internal/zzbl;->zzcu()Ljava/security/MessageDigest;@0x22"
+    },
+    {
+      "rule_id": "weak-crypto",
+      "title": "Weak hash algorithm reference",
+      "severity": "medium",
+      "description": "A collision-weakened hash is passed to MessageDigest.getInstance. Review whether it protects security-sensitive data; non-security checksums may be intentional.",
+      "evidence": "MessageDigest.getInstance('MD5'); const-string @0x5a",
+      "source": "androguard:classes.dex:Lcom/google/android/gms/internal/zzhl;->zzgn()Ljava/lang/String;@0x5e"
+    },
+    {
+      "rule_id": "weak-crypto",
+      "title": "Weak hash algorithm reference",
+      "severity": "medium",
+      "description": "A collision-weakened hash is passed to MessageDigest.getInstance. Review whether it protects security-sensitive data; non-security checksums may be intentional.",
+      "evidence": "MessageDigest.getInstance('MD5'); const-string @0x7a",
+      "source": "androguard:classes.dex:Lcom/google/android/gms/internal/zzak;->zza([B Ljava/lang/String;)Ljava/lang/String;@0x7e"
+    },
+    {
+      "rule_id": "hardcoded-crypto-iv",
+      "title": "Possible constant cryptographic IV",
+      "severity": "medium",
+      "description": "Static indicator: literal-derived bytes reach an IV constructor. Reuse can weaken modes requiring unique or unpredictable IVs; verify cipher mode and runtime use. Bounded initializer/one-hop static-call evidence does not prove field immutability, runtime reachability or exploitation.",
+      "evidence": "IvParameterSpec byte-array argument <- initializer androguard:classes.dex:Lcom/android/insecurebankv2/CryptoClass;-><init>()V@0x1c: Lcom/android/insecurebankv2/CryptoClass;->ivBytes [B <- constant byte-array payload @0x16; static helper sink androguard:classes.dex:Lcom/android/insecurebankv2/CryptoClass;->aes256decrypt([B [B [B)[B@0x4 (value redacted)",
+      "source": "androguard:classes.dex:Lcom/android/insecurebankv2/CryptoClass;->aesDeccryptedString(Ljava/lang/String;)Ljava/lang/String;@0x2a"
+    },
+    {
+      "rule_id": "hardcoded-crypto-key",
+      "title": "Possible hardcoded cryptographic key material",
+      "severity": "high",
+      "description": "Static indicator: literal-derived bytes reach a cryptographic key constructor. Embedded key material may be recoverable; verify runtime use. Bounded initializer/one-hop static-call evidence does not prove field immutability, runtime reachability or exploitation.",
+      "evidence": "SecretKeySpec byte-array argument <- initializer androguard:classes.dex:Lcom/android/insecurebankv2/CryptoClass;-><init>()V@0xa: Lcom/android/insecurebankv2/CryptoClass;->key Ljava/lang/String; <- const-string @0x6 -> String.getBytes; static helper sink androguard:classes.dex:Lcom/android/insecurebankv2/CryptoClass;->aes256decrypt([B [B [B)[B@0x12 (value redacted)",
+      "source": "androguard:classes.dex:Lcom/android/insecurebankv2/CryptoClass;->aesDeccryptedString(Ljava/lang/String;)Ljava/lang/String;@0x2a"
+    },
+    {
+      "rule_id": "hardcoded-crypto-iv",
+      "title": "Possible constant cryptographic IV",
+      "severity": "medium",
+      "description": "Static indicator: literal-derived bytes reach an IV constructor. Reuse can weaken modes requiring unique or unpredictable IVs; verify cipher mode and runtime use. Bounded initializer/one-hop static-call evidence does not prove field immutability, runtime reachability or exploitation.",
+      "evidence": "IvParameterSpec byte-array argument <- initializer androguard:classes.dex:Lcom/android/insecurebankv2/CryptoClass;-><init>()V@0x1c: Lcom/android/insecurebankv2/CryptoClass;->ivBytes [B <- constant byte-array payload @0x16; static helper sink androguard:classes.dex:Lcom/android/insecurebankv2/CryptoClass;->aes256encrypt([B [B [B)[B@0x4 (value redacted)",
+      "source": "androguard:classes.dex:Lcom/android/insecurebankv2/CryptoClass;->aesEncryptedString(Ljava/lang/String;)Ljava/lang/String;@0x28"
+    },
+    {
+      "rule_id": "hardcoded-crypto-key",
+      "title": "Possible hardcoded cryptographic key material",
+      "severity": "high",
+      "description": "Static indicator: literal-derived bytes reach a cryptographic key constructor. Embedded key material may be recoverable; verify runtime use. Bounded initializer/one-hop static-call evidence does not prove field immutability, runtime reachability or exploitation.",
+      "evidence": "SecretKeySpec byte-array argument <- initializer androguard:classes.dex:Lcom/android/insecurebankv2/CryptoClass;-><init>()V@0xa: Lcom/android/insecurebankv2/CryptoClass;->key Ljava/lang/String; <- const-string @0x6 -> String.getBytes; static helper sink androguard:classes.dex:Lcom/android/insecurebankv2/CryptoClass;->aes256encrypt([B [B [B)[B@0x12 (value redacted)",
+      "source": "androguard:classes.dex:Lcom/android/insecurebankv2/CryptoClass;->aesEncryptedString(Ljava/lang/String;)Ljava/lang/String;@0x28"
+    }
+  ],
+  "files_scanned": 127,
+  "apk_path": ".opencode\\omnirush\\inbox\\chat-attachments\\ses_eca4a1565ffepUgj2K7RbMSzPI\\367adf90-4941-46a8-9d7c-f2f5b50933c9-InsecureBankv2.apk",
+  "errors": [
+    "apktool: executable not found"
+  ],
+  "tools": {
+    "apktool": {
+      "name": "apktool",
+      "available": false,
+      "version": null,
+      "error": "executable not found",
+      "details": {
+        "decoded": false,
+        "fallback": "ZIP text extraction"
+      }
+    },
+    "androguard": {
+      "name": "androguard",
+      "available": true,
+      "version": "4.1.3",
+      "error": null,
+      "details": {
+        "manifest_decoded": true,
+        "dex_files": 1,
+        "dex_files_scanned": 1,
+        "classes": 6529,
+        "methods": 40188,
+        "instructions": 516959,
+        "strings": 40878,
+        "dex_complete": true,
+        "warnings": [],
+        "analysis_scope": "Static manifest and standard classes*.dex string pools/method instructions; local constants plus single initializer field writes and one-hop static crypto wrappers within each DEX. Field-derived findings are possible static indicators, not proof of runtime immutability. No native code, dynamically loaded code, whole-program data flow, exploit or runtime verification."
+      }
+    }
+  },
+  "dynamic": {}
+}

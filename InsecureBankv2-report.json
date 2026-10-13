@@ -1,0 +1,31 @@
+{
+  "findings": [],
+  "files_scanned": 125,
+  "apk_path": ".opencode\\omnirush\\inbox\\chat-attachments\\ses_eca4a1565ffepUgj2K7RbMSzPI\\367adf90-4941-46a8-9d7c-f2f5b50933c9-InsecureBankv2.apk",
+  "errors": [
+    "apktool: executable not found",
+    "androguard: not installed: 'NoneType' object has no attribute 'write'",
+    "Incomplete manifest coverage: no readable AndroidManifest.xml was decoded. Install/enable Androguard or APKTool to inspect compiled manifest settings.",
+    "Incomplete DEX coverage: compiled bytecode was not fully inspected. Zero findings does not establish that the APK is safe."
+  ],
+  "tools": {
+    "apktool": {
+      "name": "apktool",
+      "available": false,
+      "version": null,
+      "error": "executable not found",
+      "details": {
+        "decoded": false,
+        "fallback": "ZIP text extraction"
+      }
+    },
+    "androguard": {
+      "name": "androguard",
+      "available": false,
+      "version": null,
+      "error": "not installed: 'NoneType' object has no attribute 'write'",
+      "details": null
+    }
+  },
+  "dynamic": {}
+}
